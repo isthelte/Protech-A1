@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "pt_utils.h"
+#include "pt_sorting.h"
+
+
+int main(int argc, char * argv[]) {
+    
+    int * arrays = gen_rand_int_array(10, 4);
+    print_int_array(arrays, 10);
+        
+}

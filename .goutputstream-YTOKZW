@@ -1,0 +1,67 @@
+#include "pt_sorting.h"
+
+void selection_sort(int a[], int length) {
+    int min_pos, tmp;
+    
+    /* find the min value in a[i] to a[length-1], and swap it with a[i] */
+    for (int i = 0; i < length; i++) {
+        min_pos = i;
+        /* find the minimum value in what is left of the array */
+        for (int j = i+1; j < length; j++) {
+            if (a[j] < a[min_pos]) {
+                min_pos = j;
+            }
+        }
+        tmp = a[i];
+        a[i] = a[min_pos];
+        a[min_pos] = tmp;
+    }
+    
+}
+
+//Nguyen Phuc Thinh - s3372765
+void insertion_sort(int a[], int length) {
+
+    for (int i = 1; i < length; i += 1)
+    {
+        int insPos = i;
+        int insVal = a[i];
+
+        while (insVal < a[insPos -1] && insPos > 0){
+            a[insPos] = a[insPos - 1];
+            insPos--;
+        }
+
+        a[insPos] = insVal;
+    }
+
+}
+
+//Nguyen Phuc Thinh - s3372765
+void merge_sort(int a[], int length){
+
+    int middle = length / 2;
+    int first[middle];
+    int last[length - middle];
+
+    //Copy values to the first[]
+    for (int i = 0; i < middle; i += 1)
+    {
+        first[i] = a[i];
+    }
+
+    //Copy values to the first[]
+    for (int i = middle; i < length; i += 1)
+    {
+        last[i - middle] = a[i];
+    }
+
+    //Continue splitting
+    merge_sort(first[], middle);
+    merge_sort(last[], middle);
+
+    //...And then merge back
+
+
+}
+

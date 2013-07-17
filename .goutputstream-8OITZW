@@ -1,0 +1,27 @@
+#include "pt_sorting.h"
+
+void selection_sort(int a[], int length) {
+    int min_pos, tmp;
+    
+    /* find the min value in a[i] to a[length-1], and swap it with a[i] */
+    for (int i = 0; i < length; i++) {
+        min_pos = i;
+        /* find the minimum value in what is left of the array */
+        for (int j = i+1; j < length; j++) {
+            if (a[j] < a[min_pos]) {
+                min_pos = j;
+            }
+        }
+        tmp = a[i];
+        a[i] = a[min_pos];
+        a[min_pos] = tmp;
+    }
+    
+}
+
+//Nguyen Phuc Thinh - s3372765
+void insertion_sort(int a[], int length) {
+
+    
+
+}

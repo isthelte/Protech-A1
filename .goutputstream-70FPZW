@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "pt_utils.h"
+#include "pt_sorting.h"
+
+
+int main(int argc, char * argv[]) {
+    
+    int size = 10;
+    int nbits = 3;
+
+    int * arrays = gen_rand_int_array(size, nbits);
+    printf("\nArray of size = %i and nbits = %i\n",size, nbits);
+    print_int_array(arrays, 10);
+        
+}
