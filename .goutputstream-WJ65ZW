@@ -40,10 +40,10 @@ int main(int argc, char * argv[]) {
             insertion_sort(arrayNums, length);
             break;
         case 3:
-            merge_sort(arrayNums, length);
+            merge_sort(int arrayNums, length);
             break;
         case 4:
-            heap_sort(arrayNums, length);
+            heap_sort(int arrayNums, length);
             break;
         case 5:
             quick_sort_hoare(arrayNums, length);
