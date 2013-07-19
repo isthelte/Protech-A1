@@ -30,7 +30,7 @@ int main(int argc, char * argv[]) {
         int seed = atoi(argv[4]);
         srand(seed);
     } else {
-        srand(time(NULL));
+
     }
 
     //Generate an array
