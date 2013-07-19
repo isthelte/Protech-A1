@@ -264,7 +264,7 @@ void quicksort(int list[],int start, int end,int type){
         // random        
         }else if (type == 2)
         {
-            pivot = (rand() % (end + 1 -start)) + start;
+            pivot = (rand() % end) +start ;
         }        
           
         
@@ -325,10 +325,4 @@ void quick_sort_median(int list[], int length){
         quicksort(list,start,end,type);
 }
 
-void quick_sort_random(int list[], int length){
-        int start =0;
-        int end = length -1;
-        int type = 2;
-        quicksort(list,start,end,type);
-}
 

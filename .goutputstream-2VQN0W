@@ -42,11 +42,11 @@ int main(int argc, char * argv[]) {
 
     switch(sort_function_number){
         case 1: //Denis
-            printf("-------Apply selection sort-------\n\n");
+            printf("-------Apply selection sort-------\n");
             selection_sort(arrayNums, length);
             break;
         case 2: //Thinh 
-            printf("-------Apply insertion sort-------\n\n");
+            printf("-------Apply insertion sort-------\n");
             insertion_sort(arrayNums, length);
             break;
         case 3: //Luan
@@ -67,7 +67,7 @@ int main(int argc, char * argv[]) {
             break;
         case 7:
             printf("-------Apply quick sort (random)-------\n\n");
-            quick_sort_random(arrayNums, length);
+            //quick_sort_random(arrayNums, length);
             break;
         default:
             printf("There is no function with that number.\n\n");

@@ -264,7 +264,7 @@ void quicksort(int list[],int start, int end,int type){
         // random        
         }else if (type == 2)
         {
-            pivot = (rand() % (end + 1 -start)) + start;
+            pivot = (rand() % end) +start ;
         }        
           
         

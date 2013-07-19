@@ -19,6 +19,10 @@ int main(int argc, char * argv[]) {
     //selection_sort(arrays, size);
     //insertion_sort(arrays, size);
     //print_int_array(arrays, size);
+
+    double num;
+    scanf("%lf", num);
+    printf("%lf", num);
       
     int sort_function_number = atoi(argv[1]);
     int length = atoi(argv[2]);

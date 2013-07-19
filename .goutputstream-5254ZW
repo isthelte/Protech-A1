@@ -193,7 +193,13 @@ void quick_sort_hoare(int a[], int length){
     }
 
 //////////////////////////////////HEAP SORT///////////////////////////////////
-    
+    void heap_sort(int a[], int length)
+    {            
+        for (int i = length; i > 1; i -= 1)
+        {
+            sortHeap(a, i-1);
+        }       
+    }
     void sortHeap(int a[], int arr){
         int i, j;
         int leftChild, rightChild, midChild, root, temp;
@@ -240,39 +246,21 @@ void quick_sort_hoare(int a[], int length){
         a[0] = a[arr];
         a[arr] = temp;
         return;
-    }    
-
-    void heap_sort(int a[], int length)
-    {            
-        for (int i = length; i > 1; i -= 1)
-        {
-            sortHeap(a, i-1);
-        }       
     }
-    
 	
 //Cao Phi Hung - s3372748
 
-void quicksort(int list[],int start, int end,int type){
+void quicksort(int list[],int start, int end){
         if (start < end) {
-       
-        int pivot = 0;
-        // median
-        if (type == 1)
-        {
-             pivot = (start + end) / 2;
-        // random        
-        }else if (type == 2)
-        {
-            pivot = (rand() % (end + 1 -start)) + start;
-        }        
-          
+               // median
+            int pivot = (start + end) / 2;
         
         // hoare
             //int median = p;
             
-        
-            
+        // random
+        //    Random random = new Random();
+        //    int median = random.nextInt(r-p) +p ;
 //    System.out.println("Random: "+ median + "List[random]: "+ list[median]);           
         
          if (list[start] > list[end]) {
@@ -313,22 +301,15 @@ void quicksort(int list[],int start, int end,int type){
           int patition = i+1;      
 
             //this part will run the recusive function            
-            quicksort(list, start, patition - 1,type);
-            quicksort(list, patition + 1, end,type);
+            quicksort(list, start, patition - 1);
+            quicksort(list, patition + 1, end);
         }
 }
 
 void quick_sort_median(int list[], int length){
         int start =0;
-        int end = length -1;
-        int type = 1;
-        quicksort(list,start,end,type);
+        int end= length -1;
+        quicksort(list,start,end);
 }
 
-void quick_sort_random(int list[], int length){
-        int start =0;
-        int end = length -1;
-        int type = 2;
-        quicksort(list,start,end,type);
-}
 
