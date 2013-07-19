@@ -244,4 +244,69 @@ void quick_sort_hoare(int a[], int length){
         a[arr] = temp;
         return;
     }
+	
+//Cao Phi Hung - s33727??
+
+void quicksort(int list[],int start, int end){
+        if (start < end) {
+               // median
+            int pivot = (start + end) / 2;
+        
+        // hoare
+            //int median = p;
+            
+        // random
+        //    Random random = new Random();
+        //    int median = random.nextInt(r-p) +p ;
+//    System.out.println("Random: "+ median + "List[random]: "+ list[median]);           
+        
+         if (list[start] > list[end]) {
+            int temp = list[start];
+                list[start] =list[end];
+                list[end]= temp;
+     
+        } else if (list[start] > list[pivot]) {
+            int temp2 = list[start];
+                list[start]=list[pivot];
+                list[pivot]= temp2;
+        } else if (list[end] < list[pivot]) {
+            int temp3 = list[end];
+                 list[end] = list[pivot];
+                 list[pivot]= temp3;
+      
+        }
+        
+        // This part will find the patition
+        int x = list[end];
+        int i = start - 1;
+        for (int j = start; j < end; j++) {
+            if (list[j] < x) {
+                i++;
+                if (list[i] != list[j]) {
+                   int temp5 = list[i];
+                    list[i]=list[j];
+                    list[j]=temp5;
+                }
+            }
+        }
+        
+        if (list[i + 1] != list[end]) {
+            int temp4 = list[i+1];
+                list[i+1]= list[end];
+                list[end] = temp4;
+        }
+          int patition = i+1;      
+
+            //this part will run the recusive function            
+            quicksort(list, start, patition - 1);
+            quicksort(list, patition + 1, end);
+        }
+}
+
+void quick_sort_median(int list[], int length){
+        int start =0;
+        int end= length -1;
+        quicksort(list,start,end);
+}
+
 

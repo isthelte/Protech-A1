@@ -35,46 +35,41 @@ int main(int argc, char * argv[]) {
     int * arrayNums = gen_rand_int_array(length, nbits);
 
     //Print out the info of the array
-    printf("\nRandom array of length %i and nbits %i\n\n", length, nbits);
+    printf("Random array of length %i and nbits %i\n", length, nbits);
     printf("Before sorting: ");
     print_int_array(arrayNums, length);
-    printf("\n");   
+
+    // start the timer
+    clock_t start_c = clock();    
 
     switch(sort_function_number){
-        case 1: //Denis
-            printf("-------Apply selection sort-------\n\n");
+        case 1:
             selection_sort(arrayNums, length);
             break;
-        case 2: //Thinh 
-            printf("-------Apply insertion sort-------\n\n");
+        case 2:
             insertion_sort(arrayNums, length);
             break;
-        case 3: //Luan
-            printf("-------Apply merge sort-------\n\n");
+        case 3:
             merge_sort(arrayNums, length);
             break;
-        case 4: //Luan
-            printf("-------Apply heap sort-------\n\n");
+        case 4:
             heap_sort(arrayNums, length);
             break;
-        case 5: //Thinh
-            printf("-------Apply quick sort (hoare)-------\n\n");
+        case 5:
             quick_sort_hoare(arrayNums, length);
             break;
         case 6:
-            printf("-------Apply quick sort (median)-------\n\n");
-            quick_sort_median(arrayNums, length);
+            //quick_sort_median(int arrayNums, length);
             break;
         case 7:
-            printf("-------Apply quick sort (random)-------\n\n");
             //quick_sort_random(arrayNums, length);
             break;
         default:
-            printf("There is no function with that number.\n\n");
+            printf("There is no function with that number.\n");
     }
     
     //Print out the array after sorting
     printf("After sorting: ");
     print_int_array(arrayNums, length);  
-    printf("\n");
+
 }
