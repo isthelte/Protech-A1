@@ -94,7 +94,7 @@ int main(int argc, char * argv[]) {
         //Run the selected function
         funcs[sort_function_number](arrayNums, length);
     } else {
-        printf("Nothing is sorted\n\n");    
+        printf("Nothing is sorted\n");    
     }  
     
     //Print out the array after sorting
