@@ -54,7 +54,7 @@ int main(int argc, char * argv[]) {
 
                     totalTime += time_exec(testArray, size, funcs[j]);
 
-                    free(testArray);
+                    free();
                 }
 
                 //Print out the result of each test

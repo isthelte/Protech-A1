@@ -33,7 +33,7 @@ int time_exec(int a[], int length, void (* func)(int[], int)){
 int main(int argc, char * argv[]) {
 
     if (argc == 1){
-        printf("No array sizes specified\n");
+        printf("No array sizes specified");
     } else {
         //Get all the array sizes possible
         for (int i = 1; i < argc; i += 1)

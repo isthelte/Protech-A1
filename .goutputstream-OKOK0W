@@ -1,3 +1,6 @@
+#ifndef PT_GEN_TIMING
+#define PT_GEN_TIMING
+
 /** Return the execution time in milisecond
   * @param a the int array to be sorted in place
   * @param length the length of array a

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "pt_gen_timing.h"
+
+int time_exec(int a[], int length, void (* func)(int[], int)){
+
+    // start the timer
+    clock_t start_c = clock();
+
+    // stop the timer
+    clock_t end_c = clock();
+
+    return (end_c-start_c)/1000.0;
+
+
+}

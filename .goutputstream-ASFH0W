@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "pt_utils.h"
+#include "pt_sorting.h"
+
+#include "pt_sorting.h"
+#include "pt_gen_timing.h"
+
+//Make 2 arrays: 1 for pointers and 1 for names
+void (* funcs[])(int[], int) = {selection_sort, insertion_sort
+            , merge_sort, heap_sort, quick_sort_hoare
+            , quick_sort_median, quick_sort_random};
+char * f_names[] = {"selection_sort", "insertion_sort"
+            , "merge_sort", "heap_sort", "quick_sort_hoare"
+            , "quick_sort_median", "quick_sort_random"};
+
+int time_exec(int a[], int length, void (* func)(int[], int)){
+
+    // start the timer
+    clock_t start_c = clock();
+
+    func(a, length);
+
+    // stop the timer
+    clock_t end_c = clock();
+
+    return (end_c-start_c)/1000.0;
+
+}
+
+int main(int argc, char * argv[]) {
+
+    
+
+}

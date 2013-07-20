@@ -33,7 +33,7 @@ int time_exec(int a[], int length, void (* func)(int[], int)){
 int main(int argc, char * argv[]) {
 
     if (argc == 1){
-        printf("No array sizes specified\n");
+        printf("No array sizes specified");
     } else {
         //Get all the array sizes possible
         for (int i = 1; i < argc; i += 1)
@@ -53,12 +53,10 @@ int main(int argc, char * argv[]) {
                     int * testArray = clone_int_array(array, size);                    
 
                     totalTime += time_exec(testArray, size, funcs[j]);
-
-                    free(testArray);
                 }
 
                 //Print out the result of each test
-                printf("%s,%i,%i\n", f_names[j], size, totalTime);
+                printf("%c,%i,%i\n", f_names[j], size, totalTime);
             }
         }
     } 
