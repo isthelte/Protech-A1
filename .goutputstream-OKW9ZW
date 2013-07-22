@@ -73,10 +73,10 @@ int main(int argc, char * argv[]) {
         printf("Wrong number of argument. Please retry.\n");
         printf("Program's recommended arguments:\n");
         printf("./test_pt_sorting sort_function_name length nbits seed\n");
-        printf("\t---sort_function_name: The number of the function to be executed");
-        printf(", such as: 1(selection_sort), 2(insertion_sort)");
-        printf(", 3(merge_sort), 4(heap_sort), 5(quick_sort_hoare)");
-        printf(", 6(quick_sort_median), 7(quick_sort_random).\n");
+        printf("\t---sort_function_name: The name of the function to be executed");
+        printf(", such as: selection_sort, insertion_sort");
+        printf(", merge_sort, heap_sort, quick_sort_hoare");
+        printf(", quick_sort_median, quick_sort_random.\n");
         printf("\t---length: The length of the array to be sorted.\n");
         printf("\t---nbits: Values in the array will be randomed from 0 to 2^nbits-1\n");
         printf("\t---seed(optional): the seed to use for the random number generator. ");
