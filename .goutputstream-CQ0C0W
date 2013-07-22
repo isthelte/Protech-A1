@@ -253,7 +253,7 @@ void quick_sort_random(int list[], int length){
         quicksort(list,0,end,type);
 }
 
-void quick_sort_hoare(int list[], int length){
+void quick_sort_hoare2(int list[], int length){
         int end = length -1;
         int type = 3;
         quicksort(list,0,end,type);
