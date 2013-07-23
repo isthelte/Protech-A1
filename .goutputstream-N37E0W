@@ -45,6 +45,7 @@ int main(int argc, char * argv[]) {
             //Run the test throughout all the functions
             for (int j = 0; j < 7; j += 1)
             {
+                if (j != 3){
                 //For each test, do it 3 times to get better timings
                 //(don't ask me why, just read the assigment!)
                 int totalTime = 0;
@@ -58,7 +59,8 @@ int main(int argc, char * argv[]) {
                 }
 
                 //Print out the result of each test
-                printf("%s,%i,%i\n", f_names[j], size, totalTime);                             
+                printf("%s,%i,%i\n", f_names[j], size, totalTime);
+                }                
             }
 
             free(array);

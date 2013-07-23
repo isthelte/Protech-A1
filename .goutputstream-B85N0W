@@ -43,7 +43,7 @@ int main(int argc, char * argv[]) {
             int * array = gen_rand_int_array(size, 8);            
 
             //Run the test throughout all the functions
-            for (int j = 0; j < 7; j += 1)
+            for (int j = 3; j < 4; j += 1)
             {
                 //For each test, do it 3 times to get better timings
                 //(don't ask me why, just read the assigment!)
