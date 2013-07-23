@@ -198,64 +198,63 @@ void quicksort(int list[],int start, int end,int type){
             pivot = start;
         }             
         
+        int temp =0;
          if (list[start] > list[end]) {
-            int temp = list[start];
+                temp = list[start];
                 list[start] =list[end];
                 list[end]= temp;
      
         } else if (list[start] > list[pivot]) {
-            int temp2 = list[start];
+                temp = list[start];
                 list[start]=list[pivot];
-                list[pivot]= temp2;
+                list[pivot]= temp;
         } else if (list[end] < list[pivot]) {
-            int temp3 = list[end];
+                 temp = list[end];
                  list[end] = list[pivot];
-                 list[pivot]= temp3;
+                 list[pivot]= temp;
       
         }
         
         // This part will find the patition
-        int x = list[end];
         int i = start - 1;
         for (int j = start; j < end; j++) {
-            if (list[j] < x) {
+            if (list[j] < list[end]) {
                 i++;
                 if (list[i] != list[j]) {
-                   int temp5 = list[i];
+                    temp = list[i];
                     list[i]=list[j];
-                    list[j]=temp5;
+                    list[j]=temp;
                 }
             }
         }
         
         if (list[i + 1] != list[end]) {
-            int temp4 = list[i+1];
+                temp = list[i+1];
                 list[i+1]= list[end];
-                list[end] = temp4;
+                list[end] = temp;
         }
-          int patition = i+1;      
+          
+          //int patition = i+1;      
 
             //this part will run the recusive function            
-            quicksort(list, start, patition - 1,type);
-            quicksort(list, patition + 1, end,type);
+            //quicksort(list, start, patition - 1,type);
+            //quicksort(list, patition + 1, end,type);
+
+               // For competition only 
+              quicksort(list, start, i + 1 - 1,type);
+              quicksort(list, i + 1 + 1, end,type);
         }
 }
 
 void quick_sort_median(int list[], int length){
-        int end = length -1;
-        int type = 1;
-        quicksort(list,0,end,type);
+        quicksort(list,0,length - 1,1);
 }
 
 void quick_sort_random(int list[], int length){
-        int end = length -1;
-        int type = 2;
-        quicksort(list,0,end,type);
+        quicksort(list,0,length -1 ,2);
 }
 
 void quick_sort_hoare(int list[], int length){
-        int end = length -1;
-        int type = 3;
-        quicksort(list,0,end,type);
+        quicksort(list,0,length - 1,3);
 }
 
