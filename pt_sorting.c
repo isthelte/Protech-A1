@@ -45,78 +45,94 @@ void insertion_sort(int a[], int length) {
 
 //////////////////////////////MERGE SORT///////////////////////////////////////
     
-    void merge(int a[],int start, int mid, int end){
-        int left[mid - start +1];
+    void merge(int a[], int start, int mid, int end){
+        //declare 2 array: left store first half and right store second half       
+        int left[mid + 1 - start];
         int right[end - mid];
-        int i, j, k;
-        
-        for (i = 0; i < sizeof(left)/sizeof(*left); i += 1)
+        int i = 0;
+        int j = 0;
+
+        //left array take first half elements
+        for (int i = 0; i < sizeof(left)/sizeof(*left); i += 1)
         {
             left[i] = a[start+i];
         }
-
-        for (j = 0; j < sizeof(right)/sizeof(*right); j += 1)
+        
+        //right array take second half elements
+        for (int j = 0; j < sizeof(right)/sizeof(*right); j += 1)
         {
             right[j] = a[mid+1+j];
         }
         
-        i = 0;
-        j = 0;
-        k = start;
-
-        while(k <= end){
-            while(i < sizeof(left)/sizeof(*left) && j < sizeof(right)/sizeof(*right) && left[i] <= right[j]){
-                a[k] = left[i];
-                i++;
-                k++;
-            }
-            while(i < sizeof(left)/sizeof(*left) && j < sizeof(right)/sizeof(*right) && right[j] <= left[i]){
-                a[k] = right[j];
-                j++;
-                k++;
-            }
-            if (i >= sizeof(left)/sizeof(*left)) {             
-                while (j < sizeof(right)/sizeof(*right)) {
-                    a[k] = right[j];
-                    j++;
-                    k++;
-                }
-            }
-            if (j >= sizeof(right)/sizeof(*right)) {
-                // copy the elements of left into a
-                while (i < sizeof(left)/sizeof(*left)) {
-                    a[k] = left[i];
+        //loop from start to end
+        while(start <= end)
+        {           
+            //check the index on right sub-array
+            if(j < sizeof(right)/sizeof(*right))
+            {
+                //loop through all elements then take smaller elements from
+                //the left array compare to right array and store in array a
+                while(left[i] <= right[j] && i < sizeof(left)/sizeof(*left))
+                {                        
+                    a[start] = left[i];
                     i++;
-                    k++;
+                    start++;
+                        //if the index on left sub-array greater than left array's length'
+                        //then array a will store elements from right array
+                        if (i >= sizeof(left)/sizeof(*left)) 
+                        {                                    
+                            for (;j < sizeof(right)/sizeof(*right); j += 1)
+                            {
+                                a[start] = right[j];
+                                start++;
+                            }
+                        }
                 }
             }
+            
+            //check the index on left sub-array
+            if(i < sizeof(left)/sizeof(*left))
+            {
+                //loop through all elements then take smaller elements from
+                //the right array compare to left array and store in array a
+                while(right[j] <= left[i] && j < sizeof(right)/sizeof(*right))
+                {
+                    a[start] = right[j];
+                    j++;
+                    start++;
+                        //if the index on right sub-array greater than right array's length
+                        //then array a will store elements from left array
+                        if (j >= sizeof(right)/sizeof(*right)) 
+                        {                          
+                            for (; i < sizeof(left)/sizeof(*left) ; i += 1)
+                            {
+                                a[start] = left[i];
+                                start++;
+                            }
+                        }
+                }
+
+            }       
+            
         }
     }
 
     void merge_sort_recursive(int a[],int start, int end)
-    {
-    
-        if(end - start < 1)
+    {   
+        //check the length of array must greater than 0
+        if(end - start >= 1)
         {
-            return;
-        }
-
-        int mid = start + (end - start) / 2;
-           
-        merge_sort_recursive(a,start, mid);
-        merge_sort_recursive(a,mid+1, end);
-        
-        merge(a,start, mid, end);
-
+            merge_sort_recursive(a,start, start + (end - start) / 2);
+            merge_sort_recursive(a,(start + (end - start) / 2) + 1, end);     
+            merge(a,start, start + (end - start) / 2, end);
+        }     
     }   
 
     void merge_sort(int a[], int length)
     {
-        int start = 0;
-        int end = length - 1; 
-
-        merge_sort_recursive(a,start,end); 
+        merge_sort_recursive(a, 0 ,length - 1); 
     }
+
 
 //////////////////////////////////HEAP SORT///////////////////////////////////
     
