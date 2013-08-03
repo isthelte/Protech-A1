@@ -1,0 +1,6 @@
+Comparing 2 strings (used in test2_pt_sorting):
+http://www.wikihow.com/Compare-Two-Strings-in-C-Programming
+
+Insertion Sort:
+http://en.wikipedia.org/wiki/Insertion_sort
+

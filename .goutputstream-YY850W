@@ -9,7 +9,7 @@ EXECS = test_pt_sorting
 SOURCES2 = pt_utils.c pt_sorting.c test2_pt_sorting.c
 OBJS2 = $(patsubst %.c,%.o,$(SOURCES2))
 EXECS2 = test2_pt_sorting
-LENGTH = 1000
+LENGTH = 10
 NBITS = 16
 SEED = 2451
 
@@ -19,6 +19,7 @@ test_pt_sorting: $(OBJS)
 $(OBJS): $(HEADERS)
 
 test2_pt_sorting: $(OBJS2) 
+	$(CC) $(CFLAGS) -o test2_pt_sorting $(OBJS2)
 
 tests: $(EXECS2)
 	./test2_pt_sorting selection_sort $(LENGTH) $(NBITS) $(SEED)

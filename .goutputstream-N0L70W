@@ -43,12 +43,12 @@ int main(int argc, char * argv[]) {
             int * array = gen_rand_int_array(size, 10);            
 
             //Run the test throughout all the functions
-            for (int j = 0; j < 7; j += 1)
+            for (int j = 0; j < 2; j += 1)
             {
                 //For each test, do it 3 times to get better timings
                 //(don't ask me why, just read the assigment!)
                 int totalTime = 0;
-                for (int k = 0; k < 3; k += 1)
+                for (int k = 0; k < 1; k += 1)
                 {
                     int * testArray = clone_int_array(array, size);                    
 
@@ -58,7 +58,7 @@ int main(int argc, char * argv[]) {
                 }
 
                 //Print out the result of each test
-                printf("%s,%i,%i\n", f_names[j], size, totalTime / 3);                             
+                printf("%s,%i,%i\n", f_names[j], size, totalTime / 1);                             
             }
 
             free(array);

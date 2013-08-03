@@ -19,6 +19,7 @@ test_pt_sorting: $(OBJS)
 $(OBJS): $(HEADERS)
 
 test2_pt_sorting: $(OBJS2) 
+	$(CC) $(CFLAGS) -o test2_pt_sorting $(OBJS2)
 
 tests: $(EXECS2)
 	./test2_pt_sorting selection_sort $(LENGTH) $(NBITS) $(SEED)

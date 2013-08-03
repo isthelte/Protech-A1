@@ -1,0 +1,26 @@
+CC=gcc
+CFLAGS=-Wall -std=c99 #-g -pg
+SOURCES = pt_utils.c pt_sorting.c test_pt_sorting.c
+OBJS = $(patsubst %.c,%.o,$(SOURCES))
+HEADERS = pt_utils.h pt_sorting.h
+EXECS = test2_pt_sorting
+LENGTH = 1000
+NBITS = 16
+SEED = 2451
+
+
+test_pt_sorting: $(OBJS) 
+	$(CC) $(CFLAGS) -o test_pt_sorting $(OBJS)
+
+$(OBJS): $(HEADERS)
+
+tests: $(EXECS)
+	./test2_pt_sorting selection_sort $(LENGTH) $(NBITS) $(SEED)
+
+.PHONY: clean
+clean:
+	rm *.o 
+	
+.PHONY: cleanall
+cleanall:
+	rm *.o *~ $(EXECS)
