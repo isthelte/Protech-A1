@@ -180,6 +180,83 @@ void insertion_sort(int a[], int length) {
     
 //Cao Phi Hung - s3372748
 
+int is_sorted(int list[],int length){
+for (int i = 0; i < length;  i += 1)
+{
+	if (list[i]>list[i+1])
+	{
+		return 0;
+	}
+}
+	return 1;
+}
+
+int partition(int list[],int start, int end,int type){
+	int mid = (start + end)/2;
+	
+ /* Largest of two */
+	int pivot;	
+	if (type == 1)
+	{
+		pivot = start;
+	}else if (type == 2)
+	{
+		pivot = mid;
+	}else
+	{
+		pivot =(rand() % (end + 1 -start)) + start;
+	}
+
+	if ( list[start] > list[mid])
+	{
+		pivot = start;
+	}else
+	{
+		pivot = mid;	
+	}
+  
+    /* Smallest of remaining */
+    if ( list[pivot] > list[end] )
+     pivot = end;
+ 
+   swap (list,pivot, start);
+   pivot = start;
+ 
+   while ( start < end ) {
+     if ( list[start] <= list[end] )
+       swap ( list,pivot++, start);
+ 
+     ++start;
+   }
+ 
+   swap (list,pivot, end);
+ 
+   return pivot;
+}
+
+void quicksort(int list[],int start, int end,int type){
+     if (start < end) {
+	    
+	if (is_sorted(list,end+1)== 0)
+     {
+     	int pivot = partition ( list, start, end,type);
+     	quicksort ( list, start, pivot - 1,type);
+     	quicksort ( list, pivot + 1, end,type);
+     }
+ 	}
+}
+
+void quick_sort_hoare(int list[], int length){
+        quicksort(list,0,length - 1,1);
+}
+
+void quick_sort_median(int list[], int length){
+        quicksort(list,0,length - 1,2);
+}
+
+void quick_sort_random(int list[], int length){
+        quicksort(list,0,length -1,3);
+
 void quicksort(int list[],int start, int end,int type){
         if (start < end) {
        
