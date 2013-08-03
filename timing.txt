@@ -18,17 +18,17 @@ heap_sort,10000,3
 heap_sort,100000,36
 heap_sort,1000000,406
 
-quick_sort_hoare,1000,3
-quick_sort_hoare,10000,70
-quick_sort_hoare,100000,676
-quick_sort_hoare,1000000,6756
+quick_sort_hoare,1000,0
+quick_sort_hoare,10000,3
+quick_sort_hoare,100000,50
+quick_sort_hoare,1000000,2540
 
 quick_sort_median,1000,0
-quick_sort_median,10000,63
-quick_sort_median,100000,673
-quick_sort_median,1000000,6756
+quick_sort_median,10000,3
+quick_sort_median,100000,46
+quick_sort_median,1000000,2570
 
 quick_sort_random,1000,0
-quick_sort_random,10000,63
-quick_sort_random,100000,673
-quick_sort_random,1000000,6750
+quick_sort_random,10000,0
+quick_sort_random,100000,50
+quick_sort_random,1000000,2576
